@@ -5,4 +5,4 @@ I started with the idea of writing the Node.js EventEmitter for the client side,
 
 ## Use it
 
-Observer pattern in Javascript to use at the client side. 
+In the examples folder there is as you probably already guessed an example.
