@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src='../src/trigger.js' type='text/javascript'></script>
+
+        <script>
+            var Example = function() { 
+            };
+
+            Trigger.extend(Example);
+
+            var ex = new Example();
+            ex.bind('do', function() {
+                console.log('Do do do do');
+            });
+            ex.bind('doWith', function(data) {
+                console.log('Do with: ' + data);
+            });
+
+            ex.trigger('do');
+            ex.trigger('doWith', {
+                key: 'value'
+            });
+        </script>
+    </head>
+
+<body>
+
+    
+
+</body>
+</html>
