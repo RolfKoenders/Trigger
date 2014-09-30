@@ -16,8 +16,14 @@ Trigger.prototype.unbind = function(eventName, func) {
 Trigger.prototype.trigger = function(eventName) {
     this._listeners = this._listeners || {};
 
+    var dataArgument = arguments[1] ? arguments[1] : null;
+
     this._listeners[eventName].forEach(function(ev) {
-        ev.apply(this, Array.prototype.slice.call(arguments, 1));
+        if(dataArgument) {
+            ev.call(this, dataArgument);
+        } else {
+            ev.call(this);
+        }
     });
 };
 
@@ -37,5 +43,11 @@ Trigger.extend = function(obj) {
     });
 };
 
-// window.Trigger = Trigger;
+window.Trigger = Trigger;
+
+if (typeof window.define === 'function' && window.define.amd) {
+    window.define('Trigger', [], function() {
+        return window.Trigger;
+    });
+}
 

@@ -15,12 +15,12 @@
                 console.log('Do do do do');
             });
             ex.bind('doWith', function(data) {
-                console.log('Do with: ' + data);
+                console.log('Do with: ', data);
             });
 
             ex.trigger('do');
             ex.trigger('doWith', {
-                key: 'value'
+                name: 'Rolf'
             });
         </script>
     </head>
